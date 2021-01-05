@@ -1,0 +1,18 @@
+name: Publish npm
+description: Publishes JavaScript npm package to GitHub Packages
+
+runs:
+  using: composite
+
+  steps:
+    - name: Create ~/.npmrc file
+      shell: bash
+      run: |
+        echo "@${{ github.repository_owner }}:registry=https://npm.pkg.github.com/" > $HOME/.npmrc
+        echo "//npm.pkg.github.com/:_authToken=${{ github.token }}" >> $HOME/.npmrc
+        chmod 0600 $HOME/.npmrc
+
+    - name: Publish npm
+      shell: bash
+      run: |
+        npm publish
