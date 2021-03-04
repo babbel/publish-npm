@@ -21,4 +21,4 @@ runs:
     - name: Publish npm
       shell: bash
       run: |
-        npm publish --tag ${{ inputs.gemspec-file }}
+        npm publish --tag ${{ inputs.tag }}
