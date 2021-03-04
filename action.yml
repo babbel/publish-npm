@@ -1,6 +1,12 @@
 name: Publish npm
 description: Publishes JavaScript npm package to GitHub Packages
 
+inputs:
+  tag:
+    description: tag to register the published package with
+    required: false
+    default: "latest"
+
 runs:
   using: composite
 
@@ -15,4 +21,4 @@ runs:
     - name: Publish npm
       shell: bash
       run: |
-        npm publish
+        npm publish --tag ${{ inputs.gemspec-file }}
