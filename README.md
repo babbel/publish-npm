@@ -16,3 +16,12 @@ You can also specify a `tag` input to register the published package with, such 
         with:
           tag: beta
 ```
+
+If the package.json is not in the current directory, you can override the working directory:
+
+```
+    steps:
+      - uses: babbel/publish-npm
+        with:
+          working-directory: packages/packagename
+```
