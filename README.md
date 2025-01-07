@@ -10,6 +10,7 @@ Publishes JavaScript npm package to GitHub Packages.
 ```
 
 You can also specify a `tag` input to register the published package with, such that `npm install <name>@<tag>` will install this version
+
 ```
     steps:
       - uses: babbel/publish-npm
